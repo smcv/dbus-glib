@@ -29,31 +29,41 @@
 
 G_BEGIN_DECLS
 
+G_DEPRECATED
 void dbus_set_g_error (GError   **gerror,
                        DBusError *derror);
 
 #define DBUS_TYPE_CONNECTION      (dbus_connection_get_g_type ())
 #define DBUS_TYPE_MESSAGE         (dbus_message_get_g_type ())
+G_DEPRECATED_FOR(GDBusConnection)
 GType dbus_connection_get_g_type   (void) G_GNUC_CONST;
+G_DEPRECATED_FOR(GDBusMessage)
 GType dbus_message_get_g_type      (void) G_GNUC_CONST;
 
+G_DEPRECATED_FOR(the dbus-gmain submodule)
 void            dbus_connection_setup_with_g_main (DBusConnection  *connection,
                                                    GMainContext    *context);
+G_DEPRECATED_FOR(the dbus-gmain submodule)
 void            dbus_server_setup_with_g_main     (DBusServer      *server,
                                                    GMainContext    *context);
 
+G_DEPRECATED
 void dbus_g_proxy_send (DBusGProxy    *proxy,
                         DBusMessage   *message,
                         dbus_uint32_t *client_serial);
 
+G_DEPRECATED
 DBusConnection*  dbus_g_connection_get_connection (DBusGConnection *gconnection);
+G_DEPRECATED
 DBusGConnection* dbus_connection_get_g_connection (DBusConnection  *connection);
+G_DEPRECATED
 DBusMessage*     dbus_g_message_get_message       (DBusGMessage    *gmessage);
 
+G_DEPRECATED_FOR(g_dbus_method_invocation_get_sender)
 gchar*            dbus_g_method_get_sender    (DBusGMethodInvocation *context);
-
+G_DEPRECATED
 DBusMessage*      dbus_g_method_get_reply     (DBusGMethodInvocation *context);
-
+G_DEPRECATED
 void              dbus_g_method_send_reply    (DBusGMethodInvocation *context, 
                                                DBusMessage *reply);
 

@@ -32,6 +32,7 @@
 
 G_BEGIN_DECLS
 
+G_DEPRECATED
 void dbus_g_value_parse_g_variant (GVariant *variant, GValue *value);
 
 G_END_DECLS
